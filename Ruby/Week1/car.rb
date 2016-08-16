@@ -17,7 +17,11 @@ class Car
 	end
 
 	def cities_visited
-		p @array_cities
+		puts "It has visited:"
+		@array_cities.each do|item|
+			puts item
+		end
+
 	end
 
 
@@ -32,11 +36,18 @@ my_car.add_cities_visited("Philadelphia")
 other_car.add_cities_visited("Portland")
 other_car.add_cities_visited("Miami")
 
-
-
-
+puts ""
+puts ""
+puts "My Car"
+puts "================"
 my_car.car_sound
 my_car.cities_visited
+
+puts ""
+puts ""
+puts "Other Car"
+puts "================"
 other_car.car_sound
 other_car.cities_visited
+puts ""
 
