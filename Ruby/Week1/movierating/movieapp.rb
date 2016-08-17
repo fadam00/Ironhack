@@ -4,18 +4,6 @@ require("imdb")
 	text = IO.readlines("movies.txt")
 	movies = []
 	grid = ""
-	# 	text.each do |x|
-	# 	the_search = Imdb::Search.new(x)
-
-
-	# 	first_result = the_search.movies[0]
-	# 	a = first_result.title
-	# 	b =first_result.rating.to_i
-
-	# 	moviehash = {:name => a, :rating => b}
-	# 	movie.push (moviehash)
-
-	# 	end
 
 	text.each do |x|
 		the_search = Imdb::Search.new(x)
@@ -36,7 +24,7 @@ puts "Ratings"
 		
 		 if movie[:rating] >= rating then
 		 	grid += "|#|"
-		 	
+
 		 else 
 		 	grid += "|_|"
 		 	
@@ -45,9 +33,8 @@ puts "Ratings"
 	grid += "\n"
 end
 
-puts grid 
-puts "      ____________________"
-print "      1  2  3  4  5  6  7\n"
+puts grid
+
 
 
 
