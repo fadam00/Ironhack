@@ -29,22 +29,29 @@ require("imdb")
 		movies.push (moviehash)
 		end
 
-10.downto(1).each do |rating|
+puts "Ratings"
 
+10.downto(1).each do |rating|
 	movies.each do |movie|
 		
 		 if movie[:rating] >= rating then
-		 	grid += "#"
+		 	grid += "|#|"
 		 	
 		 else 
-		 	grid += "_"
+		 	grid += "|_|"
 		 	
 		 end
 	end
 	grid += "\n"
 end
 
-puts grid
+puts grid 
+puts "      ____________________"
+print "      1  2  3  4  5  6  7\n"
+
+
+
+
 
 
 
