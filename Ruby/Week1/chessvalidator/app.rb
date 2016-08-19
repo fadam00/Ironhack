@@ -2,6 +2,7 @@ require_relative("lib/rook.rb")
 require_relative("lib/king.rb")
 require_relative("lib/bishop.rb")
 require_relative("lib/knight.rb")
+require_relative("lib/queen.rb")
 #ROOK
 #=================================
 black_rook_l=Rook.new(8,1,"black")
@@ -87,3 +88,56 @@ p black_bishop_r.can_move?(4,3) == "no"
 p white_bishop_l.can_move?(8,1) == "no"
 p white_bishop_r.can_move?(1,8) == "no"
 
+#KNIGHT
+#=======================================
+black_knight_l=Knight.new(8,2,"black")
+black_knight_r=Knight.new(8,7, "black")
+white_knight_l=Knight.new(1,2, "white")
+white_knight_r=Knight.new(1,7, "white")
+
+puts "======================="
+puts "Valid Knight Movements"
+puts "======================="
+
+p black_knight_l.can_move?(6,3) == "yes"
+p black_knight_r.can_move?(7,5) == "yes"
+p white_knight_l.can_move?(2,4) == "yes"
+p white_knight_r.can_move?(3,8) == "yes"
+
+puts "========================="
+puts "Invalid Knight Movements"
+puts "========================="
+
+p black_knight_l.can_move?(6,4) == "no"
+p black_knight_r.can_move?(7,4) == "no"
+p white_knight_l.can_move?(3,5) == "no"
+p white_knight_r.can_move?(4,3) == "no"
+
+#QUEEN
+#======================================
+black_queen=Queen.new(8,5, "black")
+white_queen=Queen.new(1,5, "white")
+
+puts "========================="
+puts "Valid Queen Movements"
+puts "========================="
+
+p black_queen.can_move?(6,5) == "yes"
+p black_queen.can_move?(5,2) == "yes"
+p black_queen.can_move?(8,1) == "yes"
+p white_queen.can_move?(1,1) == "yes"
+p white_queen.can_move?(3,3) == "yes"
+p white_queen.can_move?(4,5) == "yes"
+puts ""
+
+puts "========================="
+puts "Invalid Queen Movements"
+puts "========================="
+
+p black_queen.can_move?(6,6) == "no"
+p black_queen.can_move?(6,4) == "no"
+p black_queen.can_move?(7,7) == "no"
+p white_queen.can_move?(3,4) == "no"
+p white_queen.can_move?(3,6) == "no"
+p white_queen.can_move?(2,3) == "no"
+puts ""

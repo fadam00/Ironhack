@@ -4,10 +4,15 @@ class Knight
 		@y = y
 		@color = color
 	end
+
+	def can_move?(final_x,final_y)
+		if ((final_x - @x).abs == 2) && ((final_y - @y).abs == 1) then
+			"yes"
+		elsif ((final_x - @x).abs == 1) && ((final_y - @y).abs == 2) 
+			"yes"
+		else
+			"no"
+		end
+	end
 end
 
-
-black_knight_l(8,2, "black")
-black_knight_r(8,7,"black")
-white_knight_l(1,2,"white")
-white_knight_r(1,7,"white")
