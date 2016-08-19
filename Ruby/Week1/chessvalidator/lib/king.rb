@@ -6,8 +6,8 @@ class King
 	end
 
 	def can_move?(final_x, final_y)
-		if (final_x - @x < 2.abs) && (final_y - @y < 2.abs)
-			"yes"
+		if ((final_x - @x).abs <= 1) && ((final_y - @y).abs <= 1)
+			"yes" 
 		else
 			"no"
 
