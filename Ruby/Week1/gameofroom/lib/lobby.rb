@@ -8,7 +8,7 @@ class Lobby
 
 		user_input = gets.chomp.upcase
 
-		if user_input === "N"|| "S" || "W" || "E"
+		if user_input === "N"
 			puts "You've made a mistake buddy"
 		end
 

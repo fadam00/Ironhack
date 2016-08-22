@@ -19,9 +19,23 @@ end
 
 class Room_North < Rooms
 
+	def in_roomN
+		puts "..."
+		puts "..."
+		puts "You've entered a room north of you. You didn't like it."
+		puts "What do you wanna do?"
+		x = gets.chomp
+
+		if x === "exit" then
+			puts "Well, then..."
+			exti_room
+	end
+
 
 end
 
+#SINCE ROOMS BEHAVE THE SAME, CONSIDER DUCK TYPES OR JUST MAKING AN OBJECT FOR EACH
+#ROOM WITH DIFFERENT DESCRIPTION FROM THE ROOM CLASS.
 class Room_South < Rooms
 	end
 
