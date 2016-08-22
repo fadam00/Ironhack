@@ -1,9 +1,15 @@
 class Lexiconomitron
 
-	def eat_t(lexi)
+	def eat_t(string)
 
-		lexi.downcase.delete("t")
+		string.downcase.delete("t")
 
 	end
 
+	def shazam(array)
+
+		array.each do |str|
+			str.reverse! #Didn't work without "!", look up function of "!"
+		end
+	end
 end
