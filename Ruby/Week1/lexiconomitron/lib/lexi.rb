@@ -11,5 +11,17 @@ class Lexiconomitron
 		array.each do |str|
 			str.reverse! #Didn't work without "!", look up function of "!"
 		end
+
+		string_flipped = eat_t(array.join(","))
+
+		array_flipped = string_flipped.split(",")
+
+  		new_array = []
+
+  		new_array << array_flipped[0]
+  		new_array << array_flipped[-1]
+
+  		p new_array
+ 
 	end
 end

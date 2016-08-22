@@ -20,7 +20,7 @@ RSpec.describe Lexiconomitron do
 		   
 		   	it "it reverses the letters within the words" do
 
-		     expect(@lexi.shazam(["This", "is", "a", "boring", "test"])). to eq(["sihT", "si", "a", "gnirob", "tset"])
+		     expect(@lexi.shazam(["This", "is", "a", "boring", "test"])). to eq(["sih", "se"])
 
 		   end
 		end
