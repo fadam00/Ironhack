@@ -18,10 +18,17 @@ RSpec.describe Lexiconomitron do
 
 		   describe "shazam" do
 		   
-		   	it "it reverses the letters within the words" do
+		   	it "reverses the letters within the words" do
 
-		     expect(@lexi.shazam(["This", "is", "a", "boring", "test"])). to eq(["sih", "se"])
+		     expect(@lexi.shazam(["This", "is", "a", "boring", "test"])).to eq(["sih", "se"])
 
+		   end
+
+		   describe "oompa_loompa" do
+
+		   	it "removes words < 3 letters long while keeping same order" do
+		   		expect(@lexi.oompa_loompa(["if","you","wanna","be","my","lover"])).to eq(["if","you","be","my"])
+		   	end
 		   end
 		end
 
