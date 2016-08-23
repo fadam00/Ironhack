@@ -1,13 +1,19 @@
 class Lexiconomitron
 
 	def eat_t(string)
-
+		#Alternative
+		#text.tr("tT","")
+		#text.gsub(/[tT]/,"")
 		string.downcase.delete("t")
 
 	end
 
 	def shazam(array)
-
+		#Alternative
+		#reversed_words = words_array.map do |the_word|
+			#eat_t(the_word.reverse)
+			#end
+		#[reversed_words.first, reversed_words.last]
 		array.each do |str|
 			str.reverse! #Didn't work without "!", look up function of "!"
 		end
@@ -26,7 +32,15 @@ class Lexiconomitron
 	end
 
 	def oompa_loompa(array)
+		#Alternative
+		#short_words = words_array.select do |the_word|
+			#the_word.length <= 3
+		#end
 
+		#short_words_no_t = short_words.map do |the_word|
+			#eat_t(the_word)
+			#end
+		#short_words_no_t
 		new_array = []
 
 		array.each do |x|
