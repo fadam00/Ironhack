@@ -1,4 +1,6 @@
+require "sinatra/reloader" if development?
 require "sinatra"
+require "artii"
 
 get "/" do
 	erb :home
