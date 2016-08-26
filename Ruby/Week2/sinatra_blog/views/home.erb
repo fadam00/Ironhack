@@ -1,0 +1,11 @@
+<h1>Welcome to my blog!</h1>
+<img src="https://media.giphy.com/media/qvdqF0PGFPfyg/giphy.gif"/>
+<a href="/new_post">Create a new post</a>
+<%@posts.each_with_index do |item, index|%>
+
+	<h2><a href="display/<%=index%>"><em><%=item.title%></em></a></h2>
+	<small><%=item.date%></small>
+	<p>----------------------------------------------------</p>
+<%end%>
+
+
