@@ -16,6 +16,20 @@
 			  results.	
 			</p>
 
+			<header>
+				<p>Which of these was released in <%=@movies_with_posters [0].year%>?</p>
+				<% @movies_with_posters.each do |movie, index| %>
+				<% if @movies_with_posters[index]== @movies_with_postsers[0] %>
+					<img src='<%= movie.poster %>' onclick="alert('CORRECT')">
+				<% else %>
+			 		<img src='<%= movie.poster %>' onclick="alert('INCORRECT')">
+				<% end %>
+					<% if index >= 8 %>
+						<% break %>
+					<% end %>
+			</header>
+
+
 			<article>
 				<% @movies_with_posters.each do |the_movie| %>
 				  <img src="<%= the_movie.poster %>"style="height:200px;"style="width:200px;"/>
@@ -23,5 +37,5 @@
 				
 			</article>
 	</body>
-	
+
 <html>
