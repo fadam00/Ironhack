@@ -1,0 +1,100 @@
+@font-face {
+	font-family: ProximaNova;
+	src: url(fonts/ProximaNova-Reg.otf);
+}
+
+@font-face {
+	font-family: ProximaNovaBold;
+	src: url(fonts/ProximaNova-Sbold.otf);
+}
+
+@font-face {
+	font-family: ProximaNovaLight;
+	src: url(fonts/ProximaNova-Light.otf);
+}
+
+.main{
+	position: relative;
+	width: 100%;
+}
+
+#familypic {
+	width:100%;
+	height: 90%;
+}
+
+#logo {
+	position:absolute;
+	height:120px;
+	width:150px;
+	padding-bottom:-100px;
+}
+
+#signin {
+	position:absolute;
+
+	font-family: ProximaNovaLight;
+
+	color: white;
+	background-color: #e21221;
+	padding: 10px;
+	border-radius: 3px;
+	margin-left: 85%;
+	margin-top:4%;
+	padding-left:30px;
+	padding-right:30px;
+
+}
+
+.textbox {	
+	background: rgba(0,0,0,0.7);
+	padding: 25px;
+	position: absolute;
+	top:24%;
+	margin-left: 25%;
+}
+
+#boldfamily {
+	font-family: ProximaNova;
+	margin: auto;
+	color: white;
+	font-size:40px;
+	padding: 20px;
+	padding: -20%;
+}
+
+#bluebutton {
+	position:relative;
+
+
+	font-family: ProximaNovaLight;
+	color: white;
+	background-color:#469df6;
+
+
+	margin-left:30%;
+	margin-right:30%;
+	padding:10px;
+	text-align:center;
+	border-radius: 3px;
+	}
+
+#releasestext {
+	font-family: ProximaNovaBold;
+	padding-left:20px;
+	font-size:30px;
+}
+
+.releasesimages {
+
+	margin-right:-40px;
+}
+
+.releasesimages img{
+	display: inline;
+	padding:15px;
+	margin-left:3%;
+	margin-right:auto;
+	height:35%;
+	width: auto;
+}
