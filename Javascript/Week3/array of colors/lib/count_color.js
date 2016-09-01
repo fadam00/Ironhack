@@ -13,4 +13,4 @@ function countColors (theColor, colorArray) {
 		return count;
 }
 
-
+module.exports = countColors; //This must be here to link the require command.
