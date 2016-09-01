@@ -23,7 +23,10 @@ dog2.makeNoise();
 dog2.shout();
 
 var toyota = new Car("Toyota Camry", "4 wheels", "vroom");
-var acura = new Car("Acura NSX", "4 wheels", "ffffyuuuummmm");
-var delorean = new Car("DMC Delorean", "4 wheels and a rocket", "*time and dimesion bending noise*");
+toyota.makeNoise();
 
+var acura = new Car("Acura NSX", "4 wheels", "ffffyuuuummmm");
+acura.makeNoise();
+
+var delorean = new Car("DMC Delorean", "4 wheels and a rocket", "*time and dimesion bending noise*");
 delorean.makeNoise();
