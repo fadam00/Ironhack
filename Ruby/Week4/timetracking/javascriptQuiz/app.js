@@ -55,11 +55,14 @@ var questionStrings = [
 
 	if (i < questionStrings.length) {
 
+		var options = {prompt: `Question #${i+1}: ${questionStrings[i]}` };
 
-	var options = {prompt: `Question #${i+1}: ${questionStrings[i]}` };
+		read(options, theCallbackFunction);
 
-	read(options, theCallbackFunction);
-
+		} else {
+			console.log("");
+			console.log("Thanks for answering this personality test");
+			console.log("Your personality type is: bland");
 		}
 
 
@@ -76,3 +79,5 @@ var questionStrings = [
 	var options = {prompt: `Question #${i+1}: ${questionStrings[i]}` };
 
 	read(options, theCallbackFunction);
+
+	
