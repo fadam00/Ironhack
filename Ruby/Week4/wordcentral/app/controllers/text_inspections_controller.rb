@@ -13,9 +13,7 @@ class TextInspectionsController < ApplicationController
 
 		@time_to_read = @word_count / (275/60)
 
-		@word_frequency= @text.array.each_with_object(Hash.new(0)) {
-			|words,counts| counts[words] += 1
-		}
+		@word_frequency = @text_array.group_by{|x| x}.sort_by{|k, v| -v.size}.map(&:first).first(10)
 		render 'results'
 	end
 end
