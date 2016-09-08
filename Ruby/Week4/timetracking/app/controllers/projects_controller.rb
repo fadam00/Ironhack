@@ -18,4 +18,22 @@ class ProjectsController < ApplicationController
 			render 'no_projects_found'
 		end
 	end
+
+	def new
+
+		@project = Project.new
+
+		# render 'new' If action name is the same as render name, render is not needed.
+	end
+
+	def create
+
+		@project = Project.new(
+			name: params[:project][:name],
+			description: params[:project][:description]
+			)
+		@project.save
+
+		redirect_to "/projects/#{@project.id}"
+	end
 end
