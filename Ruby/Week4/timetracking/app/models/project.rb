@@ -6,6 +6,7 @@ class Project < ApplicationRecord
 					format: {with: /\[alpha]/}
 	def #Project.clean_old
 		self.clean_old
+		#created_at > ? where "?" is a placeholder for 7.days.ago
 		project = Project.where("created_at > ?",  7.days.ago)
 		project.destroy_all
 

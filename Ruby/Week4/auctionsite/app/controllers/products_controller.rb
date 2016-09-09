@@ -11,5 +11,11 @@ class ProductsController < ApplicationController
 
 	def destroy
 	end
+
+	def new
+		@user = User.find(params[:user_id])
+		@product = @user.products.new
+	end
+
 	
 end

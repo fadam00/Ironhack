@@ -50,14 +50,26 @@ class TimeEntriesController < ApplicationController
 	end
 
 	def update
-		project = Project.find(params[:project_id])
-		time_entry = projects.time_entries.find(params[:id])
+		@project = Project.find(params[:project_id])
+		@time_entry = @project.time_entries.find(params[:id])
 
-		time_entry.update(
+		@time_entry.update(
 			hours: params[:time_entry][:hours],
 			minutes: params[:time_entry][:minutes],
 			date: params[:time_entry][:date]
 			)
-		redirect_to "/projects/#{project.id}/time_entries"
+
+		if time_entry.update(time_entry_params)
+		redirect_to "/projects/#{@project.id}/time_entries"
+	else
+		redirect_to "/projects/#{project.id}/time_entries/#{time_entry.id}"
+	end
+end
+#Any method that is not an action(not handling a request) should be private
+private
+
+	def time_entry_params
+		params.require(:time_entry).permit(:hours, :minutes, :date)
+	end
 
 end

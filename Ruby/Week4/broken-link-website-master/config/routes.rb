@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get '/company/about' => 'visitors#about', as: :about
   get '/blog' => 'visitors#blog', as: :blog
   get '/contact' => 'visitors#contact', as: :contact
+  get '/projects' => 'projects#index', as: :projects
 end
