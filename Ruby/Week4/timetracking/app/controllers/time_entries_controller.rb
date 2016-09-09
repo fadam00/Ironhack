@@ -38,4 +38,26 @@ class TimeEntriesController < ApplicationController
 
 		redirect_to "/projects/#{@project.id}/time_entries"
 	end
+
+	def edit
+		#Input
+		# - params[:project_id]
+		# - params[:id]
+		#Output
+		# - The edit form
+		project = Project.find(params[:project_id])
+		time_entry = project.time_entries.find(params[:id])
+	end
+
+	def update
+		project = Project.find(params[:project_id])
+		time_entry = projects.time_entries.find(params[:id])
+
+		time_entry.update(
+			hours: params[:time_entry][:hours],
+			minutes: params[:time_entry][:minutes],
+			date: params[:time_entry][:date]
+			)
+		redirect_to "/projects/#{project.id}/time_entries"
+
 end
