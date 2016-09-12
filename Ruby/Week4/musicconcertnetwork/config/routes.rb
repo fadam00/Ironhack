@@ -3,7 +3,9 @@ Rails.application.routes.draw do
  	#Homepage is index showing all concerts created	
  	get "/", to: "concerts#index", as: :index
 
- 	resources :concerts 
+ 	resources :concerts do
+ 		resources :comments
+ 	end
 
  	#Sends you to creation form
  	# get "/concerts/new", to: "concerts#new", as: :new

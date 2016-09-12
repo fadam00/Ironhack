@@ -1,20 +1,20 @@
 class CommentsController < ApplicationController
 
-	def new
+	def index
 
-	@concert = Concert.find(params[:id])
-	@comment = Concert.comment.new
-
+		@comments = Comment.find_by(concert_id: params[:id])	
 	end
 
 	def create
-			@concert = Concert.comment.new(
-			artist: params[:concert][:artist],
-			venue: params[:concert][:venue],
+			@concert = Concert.find(params[:concert_id])
+			@comment = @concert.comments.new(
+			comment: params[:comment][:comment],
+			name: params[:comment][:name],
 			)
+			@comment.save
 
-			if @concert.save
-				redirect_to "/concerts/#{concert.id}"
-			else
-				render "new"
+			redirect_to "/concerts/#{@concert.id}"
+	
+	end
+
 end
