@@ -1,7 +1,8 @@
 class ConcertsController < ApplicationController
 
 	def index
-		@concert = Concert.all
+		@concert = Concert.where(date: Time.now .. Time.now.end_of_day)
+		@concerts_month = Concert.where(date: Time.now .. Time.now.end_of_month)
 	end
 
 	def new

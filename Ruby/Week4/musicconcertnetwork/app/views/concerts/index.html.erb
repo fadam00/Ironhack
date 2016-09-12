@@ -1,16 +1,29 @@
 <body>
 	
-	<h1>Music Concert Network</h1>
+	<h3>Concerts Today</h3>
 
 		<ul>
 			<%@concert.each do |item|  %>
 				<li>
-					<%= item.artist %> -
-					<%= item.description %>
+					<%=link_to "#{item.artist}", (item)%> -
+					<%= item.description %> 	
 				</li>
 
 			<% end %>
 
+		</ul>
+	
+	<h3>Concerts in September</h3>
+
+		<ul>
+			<%@concerts_month.each do |items| %>
+			
+			<li>
+				<%=link_to "#{items.artist}", (items)%>- 
+				<%= items.description %>
+			</li>
+
+			<% end %>
 		</ul>
 
 </body>
