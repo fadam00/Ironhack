@@ -5,3 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+concert1 = Concert.create!(artist: "The Smashing Pumpkins", venue: "Parkland Amphitheatre", city: "Longhorn, VA", date:Time.now, price: 50.50, description: "Come witness the beginning of a new musical era!" )
