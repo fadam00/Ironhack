@@ -11,6 +11,10 @@ $('.btn-green-peppers').on('click', function(){
 	$('.green-pepper').toggle();
 });
 
-$('.btn-pepperonni').on('click', function(){
-	$('.pep').toggle();
+$('.btn-sauce').on('click', function(){
+	$('.sauce-white').toggle();
+});
+
+$('.btn-crust').on('click', function(){
+	$('.crust-gluten-free').toggle();
 });
