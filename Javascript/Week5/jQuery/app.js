@@ -14,6 +14,21 @@ $(document).ready(function () {
             $("body").after("<h1> TUESDAY </h1> "); //Outside the tag, but RIGHT AFTER
           });
 
+          $('.nofade').on('click', function()
+          {
+          	alert("This will fade everything, are you ready for it?");
+          	$('.bodeh').fadeToggle(500)
+          	
+
+          });
+
+          $('#cookies').on('click', function(){
+          	alert("Get ready for Charlie!");
+          	
+
+
+          })
+
         
 	  });
     
