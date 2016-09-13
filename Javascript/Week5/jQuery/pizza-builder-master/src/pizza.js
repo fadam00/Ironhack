@@ -13,10 +13,11 @@ $('.total').html("$" + price);
 		$('.btn-pepperonni').toggleClass('active')
 			if ($('.btn-pepperonni').hasClass('active')) {	
 				 price += 1;
+				 $('.lipep').show();
 				 
 		}	else{
 				price -= 1;
-				$('.lipep').prop();
+				$('.lipep').hide();
 		};
 		$('.total').html("$" + price);		
 	});
