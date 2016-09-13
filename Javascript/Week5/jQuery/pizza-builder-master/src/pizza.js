@@ -7,8 +7,8 @@ $('.btn-mushrooms').on('click', function(){
 	$('.mushroom').toggle();
 });
 
-$('.btn-pepperonni').on('click', function(){
-	$('.pep').toggle();
+$('.btn-green-peppers').on('click', function(){
+	$('.green-pepper').toggle();
 });
 
 $('.btn-pepperonni').on('click', function(){
