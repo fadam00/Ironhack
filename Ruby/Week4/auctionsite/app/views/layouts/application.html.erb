@@ -9,6 +9,22 @@
   </head>
 
   <body>
+    <header>
+
+  	<%= render("other_stuff/header") %>
+
+    </header>
+
     <%= yield %>
+
+    <footer>
+      <div style="position: absolute; bottom: 0;">
+
+          <small><%= render("other_stuff/footer") %></small>
+      
+      </div>
+
+    </footer>
+	
   </body>
 </html>

@@ -1,12 +1,17 @@
 class ProductsController < ApplicationController
 
 	def index
+
+		@products = Product.all
+
 	end
 
 	def show
+
+		@products = Product.find(params[:user_id])
+
 	end
 
-	def create
 	end
 
 	def destroy
