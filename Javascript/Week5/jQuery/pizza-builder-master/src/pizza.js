@@ -12,9 +12,9 @@ $('.btn-green-peppers').on('click', function(){
 });
 
 $('.btn-sauce').on('click', function(){
-	$('.sauce-white').toggle();
+	$('.sauce').toggleClass('sauce-white');
 });
 
 $('.btn-crust').on('click', function(){
-	$('.crust-gluten-free').toggle();
+	$('.crust').toggleClass('crust-gluten-free');
 });
