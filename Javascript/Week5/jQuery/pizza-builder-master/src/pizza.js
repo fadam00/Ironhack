@@ -11,16 +11,16 @@ $('.btn-mushrooms').on('click', function(){
 
 $('.btn-green-peppers').on('click', function(){
 	$('.green-pepper').toggle();
-		$('.btn-pepperonni').toggleClass('active');
+		$('.btn-green-peppers').toggleClass('active');
 });
 
 $('.btn-sauce').on('click', function(){
 	$('.sauce').toggleClass('sauce-white');
-		$('.btn-pepperonni').toggleClass('active');
+		$('.btn-sauce').toggleClass('active');
 });
 
 $('.btn-crust').on('click', function(){
 	$('.crust').toggleClass('crust-gluten-free');
-		$('.btn-pepperonni').toggleClass('active');
+		$('.btn-crust').toggleClass('active');
 });
 
