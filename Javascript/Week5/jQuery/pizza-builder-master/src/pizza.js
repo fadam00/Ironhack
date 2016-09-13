@@ -28,9 +28,11 @@ $('.total').html("$" + price);
 		$('.btn-mushrooms').toggleClass('active');
 			if ($('.btn-mushrooms').hasClass('active')) {	
 				 price += 1;
+				 $('.limush').show();
 				 
 		}	else{
 				price -= 1;
+				$('.limush').hide();
 		};
 		$('.total').html("$" + price)	
 	});
@@ -40,9 +42,11 @@ $('.total').html("$" + price);
 			$('.btn-green-peppers').toggleClass('active');
 			if ($('.btn-green-peppers').hasClass('active')) {	
 				 price += 1;
+				 $('.ligreen').show();
 				 
 		}	else{
 				price -= 1;
+				$('.ligreen').hide();
 		};
 		$('.total').html("$" + price)	
 	});
@@ -52,9 +56,11 @@ $('.total').html("$" + price);
 		$('.btn-sauce').toggleClass('active');
 			if ($('.btn-sauce').hasClass('active')) {	
 				 price += 3;
+				 $('.liwhite').show();
 				 
 		}	else{
 				price -= 3;
+				$('.liwhite').hide();
 		};
 		$('.total').html("$" + price)	
 	});
@@ -64,9 +70,11 @@ $('.total').html("$" + price);
 		$('.btn-crust').toggleClass('active');
 			if ($('.btn-crust').hasClass('active')) {	
 				 price += 5;
+				 $('.ligluten').show();
 				 
 		}	else{
 				price -= 5;
+				$('.ligluten').hide();
 		};	
 		$('.total').html("$" + price)
 	});
