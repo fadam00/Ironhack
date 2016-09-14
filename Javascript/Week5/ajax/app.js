@@ -71,13 +71,13 @@ function addNewCharacter(theEvent){
 
 	console.log("Add New Character");
 
-	var weapon = $('.js-weapon').val();
-	var name = $('.js-name').val();
-	var occupation = $('.js-occupation').val();
+	var newCharacter = {
 
-	console.log(`Weapon: ${weapon}`);
-	console.log(`Name: ${name}`);
-	console.log(`Occupation: ${occupation}`);
+	weapon: $('.js-weapon').val(),
+	name: $('.js-name').val(),
+	occupation: $('.js-occupation').val()
+
+};
 
 		$.ajax({
 
