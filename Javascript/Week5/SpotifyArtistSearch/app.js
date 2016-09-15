@@ -28,25 +28,22 @@ console.log("click Search Artist")
 			console.log("Success!!");
 			console.log(response);
 
+
 			var artistArray = response.artists.items;
 
 
 			artistArray.forEach(function (theArtist){
 				var imagetag = "";
 				var artistId = theArtist.id
+				$('.js-artist-list3').empty();
 				
 				if (theArtist.images.length > 0) {
-					imagetag = `<img src="${theArtist.images[0].url}">`;
-				}
+					imagetag = `<img src="${theArtist.images[0].url}" width="160">`;
 
-				var html = `
-					<li>
-						<h2> ${theArtist.name} </h2>
-						${imagetag}
-						<button class="js-album-search" data-album="${artistId}">See ${theArtist.name} albums</button>
-					</li>
-					` ;
+					var html = `
+						<button class="js-album-search" data-album="${artistId}">${imagetag}<br>${theArtist.name}</button>` ;
 					$('.js-artist-list').append(html);
+				}
 			});
 
 			$('.js-album-search').on('click',fetchAlbum);
@@ -83,32 +80,28 @@ console.log("click Search Album")
 			console.log("Success!!");
 			console.log(response);
 
-			var albumArray = response.artists.items;
+			var albumArray = response.items;
 
-
-			artistArray.forEach(function (theArtist){
-				var imagetag = "";
-				var artistId = theArtist.id
-				
-				if (theArtist.images.length > 0) {
-					imagetag = `<img src="${theArtist.images[0].url}">`;
-				}
-
+			albumArray.forEach(function (theAlbum){
+				var albumImage = `<img src="theAlbum.images[0].url">`
 				var html = `
 					<li>
-						<h2> ${theArtist.name} </h2>
-						${imagetag}
-						<button class="js-album-search" data-album="${artistId}">See ${theArtist.name} albums</button>
+						<h2> ${albumArray.name} </h2>
+						<p> ${albumImage} <p>
+						
 					</li>
 					` ;
-					$('.js-artist-list').append(html);
-				}
-			
+					$('.js-album-list').append(html);
+				});
+		};
+
 
 	function handleError (error) {
 			console.log("Error!")
 			console.log(error.responseText);
 		};
+
+
 };
 
 
