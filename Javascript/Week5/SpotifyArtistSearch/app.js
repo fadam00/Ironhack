@@ -6,6 +6,10 @@ $(document).ready(function (){
 
 });
 
+//
+//SHOW ARTISTS
+//
+
 function searchArtist(theEvent){
 	theEvent.preventDefault();
 	var searchterm = $(".artist-search").val()
@@ -20,85 +24,93 @@ console.log("click Search Artist")
 	});
 };
 
-function showArtist (response) {
-	console.log("Success!!");
-	console.log(response);
+		function showArtist (response) {
+			console.log("Success!!");
+			console.log(response);
 
-	var artistArray = response.artists.items;
+			var artistArray = response.artists.items;
 
 
-	artistArray.forEach(function (theArtist){
-		var imagetag = "";
-		
-		if (theArtist.images.length > 0) {
-			imagetag = `<img src="${theArtist.images[0].url}">`;
-		}
+			artistArray.forEach(function (theArtist){
+				var imagetag = "";
+				var artistId = theArtist.id
+				
+				if (theArtist.images.length > 0) {
+					imagetag = `<img src="${theArtist.images[0].url}">`;
+				}
 
-		var html = `
-			<li>
-				<h2> ${theArtist.name} </h2>
-				${imagetag}
-				<button class="js-album-search">See ${theArtist.name} albums</button>
-			</li>
-			` ;
-			$('.js-artist-list').append(html);
+				var html = `
+					<li>
+						<h2> ${theArtist.name} </h2>
+						${imagetag}
+						<button class="js-album-search" data-album="${artistId}">See ${theArtist.name} albums</button>
+					</li>
+					` ;
+					$('.js-artist-list').append(html);
+			});
+
+			$('.js-album-search').on('click',fetchAlbum);
+		};
+
+		function handleError (error) {
+			console.log("Error!")
+			console.log(error.responseText);
+		};
+
+
+//
+//FETCH ALBUM
+//
+
+function fetchAlbum(theEvent){
+	var theID = $(theEvent.currentTarget).data("album");
+	console.log("Forever Undefined");
+	theEvent.preventDefault();
+	var searchterm = $(".artist-search").val()
+console.log("click Search Album")
+
+
+	$.ajax({
+
+		type: "GET",
+		url: `https://api.spotify.com/v1/artists/${theID}/albums`,
+		success: showAlbum,
+		error: handleError
+
 	});
+
+			function showAlbum (response) {
+			console.log("Success!!");
+			console.log(response);
+
+			var albumArray = response.artists.items;
+
+
+			artistArray.forEach(function (theArtist){
+				var imagetag = "";
+				var artistId = theArtist.id
+				
+				if (theArtist.images.length > 0) {
+					imagetag = `<img src="${theArtist.images[0].url}">`;
+				}
+
+				var html = `
+					<li>
+						<h2> ${theArtist.name} </h2>
+						${imagetag}
+						<button class="js-album-search" data-album="${artistId}">See ${theArtist.name} albums</button>
+					</li>
+					` ;
+					$('.js-artist-list').append(html);
+				}
+			
+
+	function handleError (error) {
+			console.log("Error!")
+			console.log(error.responseText);
+		};
 };
 
-function handleError (error) {
-	console.log("Error!")
-	console.log(error.responseText);
-};
-
-// function addKylo() {
-// 	console.log("Add Kylo Click");
-
-// 	var newCharacter = {
-// 		name: "Nick Digger",
-// 		occupation: "Hunter",
-// 		debt: "$1,000",
-// 		weapon: "Tig Ole Bitty"
-// 	}
-
-// 	$.ajax({
-
-// 		type: "POST",
-// 		url: "https://ironhack-characters.herokuapp.com/characters",
-// 		data: newCharacter,
-// 		success: updateList,
-// 		error: handleError,
-
-// 	});
-// };
-
-// function updateList () {
-
-// };
-
-// function addNewCharacter(theEvent){
-// 	theEvent.preventDefault();
-
-// 	console.log("Add New Character");
-
-// 	var newCharacter = {
-
-// 	weapon: $('.js-weapon').val(),
-// 	name: $('.js-name').val(),
-// 	occupation: $('.js-occupation').val()
-
-// };
-
-// 		$.ajax({
-
-// 		type: "POST",
-// 		url: "https://ironhack-characters.herokuapp.com/characters",
-// 		data: newCharacter,
-// 		success: updateList,
-// 		error: handleError,
-
-// 	});
-
-	
 
 
 
