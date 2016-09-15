@@ -2,37 +2,46 @@ console.log("HELLO LET'S GET IT");
 
 $(document).ready(function (){
 
-	$('.js-fetch-characters').on('click', fetchCharacters);
-	$('.js-add-kylo-ren').on('click', addKylo);
-	$('.js-add-new-character').on('click', addNewCharacter);
-	//Don't let the form do regular submission
+	$('.js-search-artist').on('click', searchArtist);
+
 });
 
-function fetchCharacters(){ 
-
+function searchArtist(theEvent){
+	theEvent.preventDefault();
+	var searchterm = $(".artist-search").val()
+console.log("click Search Artist")
 	$.ajax({
 
 		type: "GET",
-		url: "https://ironhack-characters.herokuapp.com/characters",
-		success: showCharacters,
+		url: `https://api.spotify.com/v1/search?type=artist&query=${searchterm}`,
+		success: showArtist,
 		error: handleError
 
 	});
 };
 
-function showCharacters (response) {
+function showArtist (response) {
 	console.log("Success!!");
 	console.log(response);
 
-	var charactersArray = response;
+	var artistArray = response.artists.items;
 
-	charactersArray.forEach(function (theCharacter){
+
+	artistArray.forEach(function (theArtist){
+		var imagetag = "";
+		
+		if (theArtist.images.length > 0) {
+			imagetag = `<img src="${theArtist.images[0].url}">`;
+		}
+
 		var html = `
 			<li>
-				<h2> ${theCharacter.name} </h2>
+				<h2> ${theArtist.name} </h2>
+				${imagetag}
+				<button class="js-album-search">See ${theArtist.name} albums</button>
 			</li>
 			` ;
-			$('.js-characters-list').append(html);
+			$('.js-artist-list').append(html);
 	});
 };
 
@@ -41,55 +50,55 @@ function handleError (error) {
 	console.log(error.responseText);
 };
 
-function addKylo() {
-	console.log("Add Kylo Click");
+// function addKylo() {
+// 	console.log("Add Kylo Click");
 
-	var newCharacter = {
-		name: "Nick Digger",
-		occupation: "Hunter",
-		debt: "$1,000",
-		weapon: "Tig Ole Bitty"
-	}
+// 	var newCharacter = {
+// 		name: "Nick Digger",
+// 		occupation: "Hunter",
+// 		debt: "$1,000",
+// 		weapon: "Tig Ole Bitty"
+// 	}
 
-	$.ajax({
+// 	$.ajax({
 
-		type: "POST",
-		url: "https://ironhack-characters.herokuapp.com/characters",
-		data: newCharacter,
-		success: updateList,
-		error: handleError,
+// 		type: "POST",
+// 		url: "https://ironhack-characters.herokuapp.com/characters",
+// 		data: newCharacter,
+// 		success: updateList,
+// 		error: handleError,
 
-	});
-};
+// 	});
+// };
 
-function updateList () {
+// function updateList () {
 
-};
+// };
 
-function addNewCharacter(theEvent){
-	theEvent.preventDefault();
+// function addNewCharacter(theEvent){
+// 	theEvent.preventDefault();
 
-	console.log("Add New Character");
+// 	console.log("Add New Character");
 
-	var newCharacter = {
+// 	var newCharacter = {
 
-	weapon: $('.js-weapon').val(),
-	name: $('.js-name').val(),
-	occupation: $('.js-occupation').val()
+// 	weapon: $('.js-weapon').val(),
+// 	name: $('.js-name').val(),
+// 	occupation: $('.js-occupation').val()
 
-};
+// };
 
-		$.ajax({
+// 		$.ajax({
 
-		type: "POST",
-		url: "https://ironhack-characters.herokuapp.com/characters",
-		data: newCharacter,
-		success: updateList,
-		error: handleError,
+// 		type: "POST",
+// 		url: "https://ironhack-characters.herokuapp.com/characters",
+// 		data: newCharacter,
+// 		success: updateList,
+// 		error: handleError,
 
-	});
+// 	});
 
 	
 
 
-}
+
