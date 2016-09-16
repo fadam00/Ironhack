@@ -13,7 +13,7 @@ $(document).ready(function (){
 function searchSong(theEvent){
 	theEvent.preventDefault();
 	var searchterm = $(".js-search-input").val()
-console.log("click Search Song")
+	console.log("click Search Song")
 	$.ajax({
 
 		type: "GET",
@@ -30,10 +30,12 @@ console.log("click Search Song")
 
 
 			var songsArray = response.tracks.items;
-
-			$('.js-song-title').html(songsArray[0].name)
-			$('.js-song-author').html(songsArray[0].artists[0].name)
-
+			var firstSongTitle = songsArray[0].name
+			var firstSongAuthor = songsArray[0].artists[0].name
+			var firstSongAlbumCover = songsArray[0].album.images[0].url
+			$('.js-song-title').html(firstSongTitle)
+			$('.js-song-author').html(firstSongAuthor)
+			$('.js-album-cover').html(`<img src="${firstSongAlbumCover}">`)
 
 			// songsArray.forEach(function (theSong){
 			// 	var imagetag = "";
