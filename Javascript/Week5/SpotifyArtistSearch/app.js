@@ -61,10 +61,14 @@ console.log("click Search Artist")
 
 function fetchAlbum(theEvent){
 	var theID = $(theEvent.currentTarget).data("album");
+
 	console.log("Forever Undefined");
+
 	theEvent.preventDefault();
+
 	var searchterm = $(".artist-search").val()
-console.log("click Search Album")
+
+		console.log("click Search Album")
 
 
 	$.ajax({
@@ -79,6 +83,7 @@ console.log("click Search Album")
 			function showAlbum (response) {
 			console.log("Success!!");
 			console.log(response);
+			$(".js-album-list").empty();
 
 			var albumArray = response.items;
 
@@ -90,10 +95,28 @@ console.log("click Search Album")
 						<p> ${albumImage} <p>
 						
 					</li>
-					` ;
+					`
+					 ;
 					$('.js-album-list').append(html);
 				});
 		};
+
+		function appendAlbumHtml (album) {
+			var image;
+
+			if (album.images.length > 0){
+				image = album.images[0].url;
+			} else {
+				image = "undefined"
+			}
+
+			var html = 
+				<li>
+					<h4> ${album.name} </h4>
+					<img class="artist-image" src="${image}">
+
+					
+		}
 
 
 	function handleError (error) {
