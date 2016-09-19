@@ -13,13 +13,22 @@ class SandwichesController < ApplicationController
 	def show
 
 		sandwich = Sandwich.find_by(id: params[:id])
-		unless sandwich
+
+		#Sandwich.find_by(:id params[:id]).ingredients.all
+
+		ingredients = sandwich.ingredients
+		unless ingredients
 			render json: {error: "Chef Boyardee hasn't created that sandwich yet."},
 			status: 404
 			return
 		end
-		render json: sandwich
+
+
+		# format.json { render json: ingredients.to_json(:include => :sandwiches)}
+		render json: sandwich.to_json(:include => [:ingredients])
 	end
+
+
 
 	def update
 		sandwich = Sandwich.find_by(id: params[:id])
