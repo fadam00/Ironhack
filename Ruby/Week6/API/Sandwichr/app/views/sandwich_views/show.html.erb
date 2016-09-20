@@ -1,4 +1,4 @@
-<h2><%=@sandwich.name%></h2>
+<h2 class="js-sandwich" data-sandwich-id="<%=@sandwich.id%>"><%=@sandwich.name%></h2>
 
 <p><strong>Bread Type</strong>: <%=@sandwich.bread_type%>
 </p>
@@ -11,8 +11,8 @@
 
 <h4>Possible Ingredients</h4>
 <ul>
-	<% @ingredients.each do |ingredient| %>
-		<li><%= ingredient.name %></li>
+	<%@ingredients.each do |ingredient| %>
+		<li><button class="js-ingredient" data-ingredient-id="<%= ingredient.id%>"><%=ingredient.name%></button></li>
 	<% end %>
 </ul>
 

@@ -14,7 +14,7 @@ class SandwichesController < ApplicationController
 		sandwich = Sandwich.find(params[:id])
 		ingredient = Ingredient.find(params[:ingredient_id])
 		sandwich.ingredients.push(ingredient)
-
+		sandwich.save
 		redirect_to sandwich_path(sandwich.id)
 	end
 
