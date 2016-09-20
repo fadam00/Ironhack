@@ -25,8 +25,8 @@ class SandwichesController < ApplicationController
 
 		#Sandwich.find_by(:id params[:id]).ingredients.all
 
-		ingredients = sandwich.ingredients
-		unless ingredients
+		@ingredients = sandwich.ingredients
+		unless @ingredients
 			render json: {error: "Chef Boyardee hasn't created that sandwich yet."},
 			status: 404
 			return
