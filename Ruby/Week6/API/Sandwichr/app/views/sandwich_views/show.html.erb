@@ -9,4 +9,11 @@
 	<% end %>
 </ul>
 
+<h4>Possible Ingredients</h4>
+<ul>
+	<% @ingredients.each do |ingredient| %>
+		<li><%= ingredient.name %></li>
+	<% end %>
+</ul>
+
 <%= link_to "Go back", "/sandwiches" %>
