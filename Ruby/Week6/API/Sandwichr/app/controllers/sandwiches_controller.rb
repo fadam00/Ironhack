@@ -5,6 +5,9 @@ class SandwichesController < ApplicationController
 		render json: sandwiches
 	end
 
+	def new
+	end
+
 	def create
 		sandwich = Sandwich.create(sandwich_params)
 		render json: sandwich
@@ -14,6 +17,7 @@ class SandwichesController < ApplicationController
 		sandwich = Sandwich.find(params[:id])
 		ingredient = Ingredient.find(params[:ingredient_id])
 		sandwich.ingredients.push(ingredient)
+		sandwich.total_calories += ingredient.calories
 		sandwich.save
 		redirect_to sandwich_path(sandwich.id)
 	end
