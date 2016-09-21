@@ -1,0 +1,18 @@
+<% if current_user == @users %>
+	<h2> This is your profile </h2>
+<% else %>
+	<h2> User Profile </h2>
+<% end %>
+
+<h3> <%=@users.name %> </h3>
+
+<h3> Favorite Comics </h3>
+
+<ul>
+	<% @users.comics.each do |the_comic| %>
+		<li>
+			<h4> <%= the_comic.title %> </h4>
+			<p>Publisher: <%=the_comic.publisher %></p>
+		</li>
+	<% end %>
+</ul>
