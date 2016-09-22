@@ -1,7 +1,7 @@
 <h2>All Sandwiches </h2>
 
 <ul>
-	<% @sandwiches.each do |sandwich| %>
-	<li><%= link_to sandwich.name, sandwich %></li>
+	<% @sandwiches.each do |the_sandwich| %>
+	<li><%= link_to the_sandwich.name, sandwich_path(the_sandwich) %></li>
 <% end %>
 </ul>

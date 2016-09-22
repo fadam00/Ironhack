@@ -1,0 +1,11 @@
+<h3> Welcome </h3>
+
+	<% if user_signed_in? %>
+
+		<p> <%=link_to "Sandwiches", sandwiches_path%> </p>
+
+	<% else %>
+
+		<p> Please Sign Up or Log In </p>
+
+	<% end %>

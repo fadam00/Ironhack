@@ -1,4 +1,8 @@
 class SandwichViewsController < ApplicationController
+	def home
+		@sandwiches = Sandwich.all
+		render :home
+	end
 
 	def index
 	@sandwiches = Sandwich.all
